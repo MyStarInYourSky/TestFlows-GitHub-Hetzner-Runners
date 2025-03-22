@@ -42,7 +42,7 @@ set -x
     echo "Configure Python venv"
     apt-get install --yes --no-install-recommends \
         python3-venv
-    su ubuntu -s python3 -m venv /home/ubuntu/venv
+    su ubuntu -s /usr/bin/env python3 -m venv /home/ubuntu/venv
     ls -la /home/ubuntu
     echo -n 'export PATH="/home/ubuntu/venv/bin/:$PATH"' >> /home/ubuntu/.profile
 }
