@@ -21,7 +21,7 @@ with open("README.rst", "r", encoding="utf-8") as fd:
 
 setup(
     name="testflows.github.hetzner.runners",
-    version="__VERSION__",
+    version="1.8.2",
     description="Autoscaling GitHub Actions Runners Using Hetzner Cloud ",
     author="Vitaliy Zakaznikov",
     author_email="vzakaznikov@testflows.com",
