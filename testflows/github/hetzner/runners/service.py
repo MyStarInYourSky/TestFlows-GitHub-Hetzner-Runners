@@ -99,7 +99,7 @@ def install(args, config):
 
     with Action(f"Installing {SERVICE}"):
         binary = os.path.join(
-            current_dir, "bin", "github-hetzner-runners --service-mode"
+            "/home/ubuntu/venv/", "bin", "github-hetzner-runners --service-mode"
         )
         contents = (
             "[Unit]\n"
