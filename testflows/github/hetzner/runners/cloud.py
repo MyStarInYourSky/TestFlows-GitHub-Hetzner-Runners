@@ -172,11 +172,11 @@ def deploy(args, config: Config, redeploy=False):
 
     with Action(f"Installing github-hetzner-runners {version}"):
         command = (
-            f"'sudo -u ubuntu pip3 install testflows.github.hetzner.runners=={version}'"
+            f"'sudo -u ubuntu -i pip3 install testflows.github.hetzner.runners=={version}'"
         )
 
         if version.strip().lower() == "latest":
-            command = f"'sudo -u ubuntu pip3 install testflows.github.hetzner.runners'"
+            command = f"'sudo -u ubuntu -i pip3 install testflows.github.hetzner.runners'"
             if redeploy:
                 command.replace("pip3 install", "pip3 install --upgrade")
 
@@ -289,14 +289,14 @@ def upgrade(args, config: Config):
         with Action(f"Upgrading github-hetzner-runners to version {upgrade_version}"):
             ssh(
                 server,
-                f"'sudo -u ubuntu pip3 install testflows.github.hetzner.runners=={upgrade_version}'",
+                f"'sudo -u ubuntu -i pip3 install testflows.github.hetzner.runners=={upgrade_version}'",
                 stacklevel=4,
             )
     else:
         with Action(f"Upgrading github-hetzner-runners the latest version"):
             ssh(
                 server,
-                f"'sudo -u ubuntu pip3 install --upgrade testflows.github.hetzner.runners'",
+                f"'sudo -u ubuntu -i pip3 install --upgrade testflows.github.hetzner.runners'",
                 stacklevel=4,
             )
 
